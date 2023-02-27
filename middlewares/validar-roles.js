@@ -9,7 +9,7 @@ const esMaestroRole = (req = request, res = response, next) => {
     const {role, nombre} = req.user
     if(role != 'ROLE_MAESTRO'){
         return res.status(401).json({
-            msg:  'Solo los profesores tienen permiso de hacer esto'
+            msg:  'Solo los profesores tienen permiso de hacer esto', nombre
         })
     }
 

@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         default: 'ROLE_ALUMNO'
         
     },
-    cursos:{
+    curso:{
         type: Array,
         default: []
     }

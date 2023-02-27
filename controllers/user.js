@@ -16,8 +16,8 @@ const getUsers = async (req = request, res = response) => {
 
 
 const postUser = async (req = request, res = response) => {
-    const {nombre, email, password, role, cursos} = req.body;
-    const userDB = new User({nombre, email, password, role, cursos});
+    const {nombre, email, password, role, curso} = req.body;
+    const userDB = new User({nombre, email, password, role, curso});
 
     const salt = bcryptjs.genSaltSync();
     userDB.password = bcryptjs.hashSync(password, salt);
@@ -25,7 +25,7 @@ const postUser = async (req = request, res = response) => {
     await userDB.save();
 
     res.json({
-        msg: 'Usuario Creado',
+        msg: 'Usuario Creado Pefectamente',
         userDB
     })
 }

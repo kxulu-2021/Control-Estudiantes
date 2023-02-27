@@ -21,7 +21,8 @@ const postCurso = async(req= request, res = response) =>{
     const nombre = req.body.nombre;
     const descripcion = req.body.descripcion;
     const maestro = req.user._id;
-    const cursoDB = new Curso({nombre, descripcion, maestro});
+    const alumnos = req.user._id;
+    const cursoDB = new Curso({nombre, descripcion, maestro, alumnos});
     await cursoDB.save();
 
     res.status(201).json({

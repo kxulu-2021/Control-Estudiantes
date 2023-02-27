@@ -2,12 +2,12 @@ const {Schema, model} = require('mongoose');
 const CursoSchema = new Schema({
     nombre:{
         type:String,
-        required:[true, 'El nombre es obligatorio']
+        required:[true, 'El nombre del curso es obligatorio']
 
     },
     descripcion:{
         type:String,
-        required:[true, 'La descripcion es obligatoria']
+        required:[true, 'La descripcion del curso es obligatoria']
     },
     maestro:{
         type: Schema.Types.ObjectId,
